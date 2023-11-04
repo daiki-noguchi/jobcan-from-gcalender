@@ -8,6 +8,9 @@ packages = [{include = "google_calender"}]
 
 [tool.poetry.dependencies]
 python = "~3.10"
+google-api-python-client = "^2.106.0"
+google-auth = "^2.23.4"
+pydantic = "^2.4.2"
 
 
 [build-system]
@@ -21,6 +24,9 @@ black = "^23.0"
 isort = "^5.0"
 flake8 = "^6.0"
 # wemake-python-styleguide = "^0.17.0"
+
+[tool.poetry.scripts]
+get-events = "google_calender.get_events:main"
 
 [tool.pysen]
 version = "0.10"
