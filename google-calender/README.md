@@ -9,7 +9,7 @@ GoogleCalenderから予定を読み取る
 
 ### Google Credentials
 
-1. GCP公式サイトからGCPプロジェクトを作成
+1. [GCP公式サイト](https://console.cloud.google.com/welcome?hl=ja&project=jobcan-404108)からGCPプロジェクトを作成
 1. Google Calendar APIを有効にする
     1. [APIとサービス]→[ライブラリ]を選択
     1. 検索窓から「Google Calendar API」を検索し、[有効化]をクリック
@@ -21,6 +21,10 @@ GoogleCalenderから予定を読み取る
     1. サービスアカウントの画面で、該当のサービスアカウントの[鍵を管理]を選択する
     1. 「JSON」を選択して、鍵を作成する
     1. 作成した鍵(JSON)を`google-calender/google_calender/data`に配置する。ファイル名は`google_credentials.json`とリネームする
+1. Googleカレンダーの共有設定を編集する
+    1. Googleカレンダーを開き、予定を取得したいアカウントの３点リーダー→[設定と共有]を選択する
+    1. 「特定のユーザーとの共有」のところで、[+ ユーザーを追加]をクリックする
+    1. サービスアカウントのメールアドレスを入力し、[権限]には「予定の表示（すべての予定の詳細）」を選択する
 
 ## build
 
