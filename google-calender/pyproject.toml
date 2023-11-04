@@ -1,0 +1,48 @@
+[tool.poetry]
+name = "google-calender"
+version = "0.1.0"
+description = "GoogleCalenderから予定を読み取る"
+authors = ["daiki-noguchi <bigshiny.0328@gmail.com>"]
+readme = "README.md"
+packages = [{include = "google_calender"}]
+
+[tool.poetry.dependencies]
+python = "~3.10"
+google-api-python-client = "^2.106.0"
+google-auth = "^2.23.4"
+pydantic = "^2.4.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.lint.dependencies]
+pysen = "^0.10"
+mypy = "^1.0"
+black = "^23.0"
+isort = "^5.0"
+flake8 = "^6.0"
+# wemake-python-styleguide = "^0.17.0"
+
+[tool.poetry.scripts]
+get-events = "google_calender.get_events:main"
+
+[tool.pysen]
+version = "0.10"
+builder = ".lint.py"
+
+[tool.pysen.lint]
+enable_black = true
+enable_flake8 = true
+enable_isort = true
+enable_mypy = true
+mypy_preset = "strict"
+line_length = 88
+py_version = "py310"
+[[tool.pysen.lint.mypy_targets]]
+  paths = ["."]
+
+[tool.pysen.lint.source]
+# includes = ["."]
+excludes = [".venv"]
